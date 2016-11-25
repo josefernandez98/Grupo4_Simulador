@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Persona.h"
 #include "Entrenadores.h"
 #include "Jugadores.h"
@@ -18,6 +19,7 @@ class Equipos{
     int GolesContra;
   public:
     Equipos();
+    Equipos(string,Entrenadores, int, int, int, int);
     int getNivelDefensa();
     int getNivelOfensa();
     int getGolesFavor();
@@ -31,6 +33,8 @@ class Equipos{
     void setEntrenador(Entrenadores);
 
     void setListaJugadores(Jugadores);
+
+    string toString();
 
 
 };

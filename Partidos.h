@@ -16,6 +16,7 @@ class Partidos{
 
   public:
     Partidos();
+    Partidos(Equipos,Equipos,int,int,Equipos,Equipos);
     Equipos getEquipo1();
     Equipos getEquipo2();
     Equipos getGanador();
@@ -29,6 +30,8 @@ class Partidos{
     void setLocal(Equipos);
     void setMarcadorEquipo1(int);
     void getMarcadorEquipo2(int);
+
+    string toString();
 
 
 
