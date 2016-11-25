@@ -11,7 +11,6 @@ class Equipos{
     int NivelOfensiva;
     int GolesFavor;
     int GolesContra;
-
   public:
     Equipos();
     int getNivelDefensa();

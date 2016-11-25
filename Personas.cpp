@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Personas.h"
 
 using namespace std;
 
@@ -9,6 +10,10 @@ Personas::Personas() {
     apellido = "";
     sobrenombre = "";
     nivel = 1;
+}//Fin del metodo
+
+Personas::Personas() {
+
 }//Fin del metodo
 
 void Personas::setNombre (string nombre) {
