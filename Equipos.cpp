@@ -22,10 +22,10 @@ Equipos::Equipos(string nombreEquipo, Entrenadores entrenador,
 int GolesFavor, int GolesContra){
   this->nombreEquipo=nombreEquipo;
   this->entrenador=entrenador;
-  //this->NivelDefensa=NivelDefensa;
-  //this->NivelOfensiva=NivelOfensiva;
   this->GolesFavor=GolesFavor;
   this->GolesContra=GolesContra;
+  setNivelDefensa();
+  setNivelOfensa();
 }
 int Equipos::getNivelDefensa(){
   return NivelDefensa;
