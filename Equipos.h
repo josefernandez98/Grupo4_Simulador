@@ -12,14 +12,14 @@ class Equipos{
   private:
     string nombreEquipo;
     Entrenadores entrenador;
-    vector<Jugadores> listaJugadores;
+    vector<Jugadores*> listaJugadores;
     int NivelDefensa;
     int NivelOfensiva;
     int GolesFavor;
     int GolesContra;
   public:
     Equipos();
-    Equipos(string,Entrenadores, int, int, int, int);
+    Equipos(string,Entrenadores, int, int);
     int getNivelDefensa();
     int getNivelOfensa();
     int getGolesFavor();
