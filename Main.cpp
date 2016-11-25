@@ -13,7 +13,16 @@ using namespace std;
 int main(int argc, char const *argv[]) {
     int opcion = 0;
     opcion = Menu();
-    
+    if(opcion==1){
+
+    }
+    if(opcion==2){
+
+    }
+    if(opcion==3){
+      cout << "Adios" << endl;
+    }
+
     return 0;
 }//Fin del main
 
