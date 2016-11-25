@@ -11,7 +11,7 @@ class Entrenadores : public Personas {
         string tactica;
     public:
         Entrenadores();
-        Entrenadores(string);
+        Entrenadores(string, string, string, string, int);
         void setTactica(string);
         string getTactica();
         string toString();

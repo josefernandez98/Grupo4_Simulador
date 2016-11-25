@@ -10,7 +10,7 @@ class Jugadores : public Personas {
         string posicion;
     public:
         Jugadores();
-        Jugadores(string);
+        Jugadores(string, string, string, string, int);
         void setPosicion(string);
         string getPosicion();
         string toString();

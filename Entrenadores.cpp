@@ -6,12 +6,13 @@
 
 using namespace std;
 
-Entrenadores::Entrenadores(string tactica) {
+Entrenadores::Entrenadores(string tactica, string nombre, string apellido, string
+sobrenombre, int nivel):Personas(nombre, apellido, sobrenombre, nivel) {
     this->tactica = tactica;
 }//Fin del metodo
 
 Entrenadores::Entrenadores () {
-    
+
 }//Fin del metodo
 
 string Entrenadores::toString () {

@@ -5,7 +5,8 @@
 #include "Entrenadores.h"
 #include "Jugadores.h"
 
-Jugadores::Jugadores(string posicion) {
+Jugadores::Jugadores(string posicion, string nombre, string apellido, string sobrenombre, int nivel):Personas(nombre,
+apellido, sobrenombre, nivel) {
     this->posicion = posicion;
 }//Fin del metodo
 
