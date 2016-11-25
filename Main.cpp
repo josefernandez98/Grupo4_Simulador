@@ -14,12 +14,12 @@ using namespace std;
 int main(int argc, char const *argv[]) {
     int opcion = 0;
     vector<Equipos> listaEquipos;
-    vector<Jugadores> listaJugadores;
+    vector<Jugadores*> listaJugadores;
     opcion = Menu();
     if(opcion==1){
         for (int i = 1; i <= 4; i++) {
             string nombreEquipo = "", nombreEntrenador = "", apellidoEntrenador = "", sobrenombreEntrenador = "", tacticaEntrenador = "";
-            Entrenadores entrenador;
+            Entrenadores* entrenador;
             int nivelEntrenador = 1;
             cout << "Ingrese el nombre del equipo #" << i << ":";
             cin >> nombreEquipo;
@@ -45,7 +45,7 @@ int main(int argc, char const *argv[]) {
             cout << endl;
             cout << "Ingrese la tactica del entrenador del equipo #" << i << ":";
             cin >> tacticaEntrenador;
-            entrenador = new Entrenadores(tacticaEntrenador, nombreEntrenador, apellidoEntrenador, sobrenombreEntrenador, nivel);
+            entrenador = new Entrenadores(tacticaEntrenador, nombreEntrenador, apellidoEntrenador, sobrenombreEntrenador, nivelEntrenador);
             for (int i = 0; i < 11;i++) {
                 string nombreJugador = "", apellidoJugador = "", sobrenombreJugador = "", posicionJugador = "";
                 int nivelJugador = 1;
@@ -70,10 +70,17 @@ int main(int argc, char const *argv[]) {
                 cout << "Ingrese la posicion del jugador:";
                 cin >> posicionJugador;
                 cout << endl;
-                Jugadores jugador = new Jugadores(posicionJugador,nombreJugador, apellidoJugador, sobrenombreJugador, nivelJugador);
-                listaJugadores.push_back();
+                Jugadores* jugador = new Jugadores(posicionJugador,nombreJugador, apellidoJugador, sobrenombreJugador, nivelJugador);
+                listaJugadores.push_back(jugador);
             }//Fin del for de creacion de jugadroes
-            
+            listaEquipos.push_back(new Equipos(nombreEquipo, entrenador, 0, 0));
+            for (int j = 0; j < listaJugadores.size(); j++) {
+                    listaEquipos.at(i)->setListaJugadores(listaJugadores.at(j));
+            }//Fin del for agregar
+            for (int j = 0; j < listaJugadores.size(); j++) {
+                listaJugadores.erase(listaJugadores.begin() + j);
+            }//Fin del for borrar jugadores
+            listaJugadores.clear();
         }//Fin del for PADRE
     }//Fin del if
     if(opcion==2){
