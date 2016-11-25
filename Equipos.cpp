@@ -5,10 +5,13 @@
 #include "Personas.h"
 #include "Jugadores.h"
 #include "Entrenadores.h"
+#include "Equipos.h"
+
+using namespace std;
 
 Equipos::Equipos(){
   nombreEquipo="";
-  entrenador=NULL;
+  entrenador;
   NivelDefensa=0;
   NivelOfensiva=0;
   GolesFavor=0;
@@ -51,22 +54,25 @@ void Equipos::setGolesContra(int GolesContra){
   this->GolesContra=GolesContra;
 }
 
-Entrenadores Equipos::getEntrenador();
+Entrenadores Equipos::getEntrenador() {
+    return entrenador;
+}
+
 void Equipos::setEntrenador(Entrenadores entrenador){
   this->entrenador;
 }
 
 void Equipos::setListaJugadores(Jugadores jugador){
-  Jugadores.push_back(jugador);
+  listaJugadores.push_back(jugador);
 }
 
 string Equipos::toString(){
   stringstream ss;
-  ss << "Nombre Equipo: "<< nombreEquipo<<"\n";
-  ss << "Entrenador: "<< entrenador<<"\n";
-  ss << "Nivel Defensa: "<< NivelDefensa<<"\n";
-  ss << "Nivel Ofensa: "<< NivelOfensiva<<"\n";
-  ss << "Goles Favor : "<< GolesFavor <<"\n";
-  ss << "Goles Contra: "<< GolesContra <<"\n";
+  ss << "Nombre Equipo: " << nombreEquipo << endl;
+  ss << "Entrenador: " << entrenador << endl;
+  ss << "Nivel Defensa: " << NivelDefensa << endl;
+  ss << "Nivel Ofensa: " << NivelOfensiva << endl;
+  ss << "Goles Favor : " << GolesFavor << endl;
+  ss << "Goles Contra: " << GolesContra << endl;
   return ss.str();
 }

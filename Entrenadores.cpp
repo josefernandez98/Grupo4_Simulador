@@ -11,7 +11,7 @@ Entrenadores::Entrenadores(string tactica) {
 }//Fin del metodo
 
 Entrenadores::Entrenadores () {
-
+    
 }//Fin del metodo
 
 string Entrenadores::toString () {
