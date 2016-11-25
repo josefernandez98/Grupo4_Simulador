@@ -12,7 +12,7 @@ class Equipos{
   private:
     string nombreEquipo;
     Entrenadores entrenador;
-    vector<Jugadores*> listaJugadores;
+    vector<Jugadores> listaJugadores;
     int NivelDefensa;
     int NivelOfensiva;
     int GolesFavor;
@@ -24,8 +24,8 @@ class Equipos{
     int getNivelOfensa();
     int getGolesFavor();
     int getGolesContra();
-    void setNivelDefensa(int);
-    void setNivelOfensa(int);
+    void setNivelDefensa();
+    void setNivelOfensa();
     void setGolesFavor(int);
     void setGolesContra(int);
 
