@@ -13,4 +13,5 @@ class Jugadores : public Personas {
         Jugadores(string);
         void setPosicion(string);
         string getPosicion();
+        string toString();
 };

@@ -14,4 +14,5 @@ class Entrenadores : public Personas {
         Entrenadores(string);
         void setTactica(string);
         string getTactica();
+        string toString();
 };

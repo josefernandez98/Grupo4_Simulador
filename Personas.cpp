@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Personas.h"
 
 using namespace std;
@@ -15,6 +16,15 @@ Personas::Personas() {
 Personas::Personas() {
 
 }//Fin del metodo
+
+string Personas::toString() {
+    stringstream ss;
+    ss << "Nombre: " << nombre << endl;
+    ss << "Apellido: " << apellido << endl;
+    ss << "Sobrenombre: " << sobrenombre << endl;
+    ss << "Nivel: " << nivel << endl;
+    return ss.str();
+}
 
 void Personas::setNombre (string nombre) {
     this->nombre = nombre;
