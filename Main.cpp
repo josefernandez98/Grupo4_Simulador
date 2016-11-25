@@ -13,7 +13,7 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
     int opcion = 0;
-    vector<Equipos> listaEquipos;
+    vector<Equipos*> listaEquipos;
     vector<Jugadores*> listaJugadores;
     opcion = Menu();
     if(opcion==1){
@@ -46,7 +46,7 @@ int main(int argc, char const *argv[]) {
             cout << "Ingrese la tactica del entrenador del equipo #" << i << ":";
             cin >> tacticaEntrenador;
             entrenador = new Entrenadores(tacticaEntrenador, nombreEntrenador, apellidoEntrenador, sobrenombreEntrenador, nivelEntrenador);
-            for (int i = 0; i < 11;i++) {
+            for (int j = 0; j < 11;j++) {
                 string nombreJugador = "", apellidoJugador = "", sobrenombreJugador = "", posicionJugador = "";
                 int nivelJugador = 1;
                 cout << "Ingrese el nombre del jugador:";

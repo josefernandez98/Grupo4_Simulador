@@ -18,7 +18,7 @@ Equipos::Equipos(){
   GolesContra=0;
 }
 
-Equipos::Equipos(string nombreEquipo, Entrenadores entrenador,
+Equipos::Equipos(string nombreEquipo, Entrenadores* entrenador,
 int GolesFavor, int GolesContra){
   this->nombreEquipo=nombreEquipo;
   this->entrenador=entrenador;
@@ -44,17 +44,17 @@ int Equipos::getGolesContra(){
 void Equipos::setNivelDefensa(){
   int aux=0;
   for (int i = 0; i < listaJugadores.size(); i++) {
-    aux += listaJugadores.at(i).getNivel();
+    aux += listaJugadores.at(i)->getNivel();
   }
-  aux+=entrenador.getNivel();
+  aux+=entrenador->getNivel();
   this->NivelDefensa=aux;
 }
 void Equipos::setNivelOfensa(){
   int aux=0;
   for (int i = 0; i < listaJugadores.size(); i++) {
-    aux += listaJugadores.at(i).getNivel();
+    aux += listaJugadores.at(i)->getNivel();
   }
-  aux+=entrenador.getNivel();
+  aux+=entrenador->getNivel();
   aux=aux*1.1;
   this->NivelOfensiva=aux;
 }
@@ -66,22 +66,22 @@ void Equipos::setGolesContra(int GolesContra){
   this->GolesContra=GolesContra;
 }
 
-Entrenadores Equipos::getEntrenador() {
+Entrenadores* Equipos::getEntrenador() {
     return entrenador;
 }
 
-void Equipos::setEntrenador(Entrenadores entrenador){
+void Equipos::setEntrenador(Entrenadores* entrenador){
   this->entrenador;
 }
 
-void Equipos::setListaJugadores(Jugadores jugador){
+void Equipos::setListaJugadores(Jugadores* jugador){
   listaJugadores.push_back(jugador);
 }
 
 string Equipos::toString(){
   stringstream ss;
   ss << "Nombre Equipo: " << nombreEquipo << endl;
-  ss << "Entrenador: " << entrenador.toString() << endl;
+  ss << "Entrenador: " << entrenador->toString() << endl;
   ss << "Nivel Defensa: " << NivelDefensa << endl;
   ss << "Nivel Ofensa: " << NivelOfensiva << endl;
   ss << "Goles Favor : " << GolesFavor << endl;
