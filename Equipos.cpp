@@ -19,11 +19,11 @@ Equipos::Equipos(){
 }
 
 Equipos::Equipos(string nombreEquipo, Entrenadores entrenador,
-int NivelDefensa, int NivelOfensiva, int GolesFavor, int GolesContra){
+int GolesFavor, int GolesContra){
   this->nombreEquipo=nombreEquipo;
   this->entrenador=entrenador;
-  this->NivelDefensa=NivelDefensa;
-  this->NivelOfensiva=NivelOfensiva;
+  //this->NivelDefensa=NivelDefensa;
+  //this->NivelOfensiva=NivelOfensiva;
   this->GolesFavor=GolesFavor;
   this->GolesContra=GolesContra;
 }
@@ -40,12 +40,25 @@ int Equipos::getGolesFavor(){
 int Equipos::getGolesContra(){
   return GolesContra;
 }
-void Equipos::setNivelDefensa(int NivelDefensa){
-  this->NivelDefensa=NivelDefensa;
+//==============================
+void Equipos::setNivelDefensa(){
+  int aux=0;
+  for (int i = 0; i < listaJugadores.size(); i++) {
+    aux += listaJugadores.at(i).getNivel();
+  }
+  aux+=entrenador.getNivel();
+  this->NivelDefensa=aux;
 }
-void Equipos::setNivelOfensa(int NivelOfensiva){
-  this->NivelOfensiva=NivelOfensiva;
+void Equipos::setNivelOfensa(){
+  int aux=0;
+  for (int i = 0; i < listaJugadores.size(); i++) {
+    aux += listaJugadores.at(i).getNivel();
+  }
+  aux+=entrenador.getNivel();
+  aux=aux*1.1;
+  this->NivelOfensiva=aux;
 }
+//======================================
 void Equipos::setGolesFavor(int GolesFavor){
   this->GolesFavor=GolesFavor;
 }

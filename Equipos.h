@@ -19,13 +19,13 @@ class Equipos{
     int GolesContra;
   public:
     Equipos();
-    Equipos(string,Entrenadores, int, int, int, int);
+    Equipos(string,Entrenadores, int, int);
     int getNivelDefensa();
     int getNivelOfensa();
     int getGolesFavor();
     int getGolesContra();
-    void setNivelDefensa(int);
-    void setNivelOfensa(int);
+    void setNivelDefensa();
+    void setNivelOfensa();
     void setGolesFavor(int);
     void setGolesContra(int);
 
