@@ -6,6 +6,8 @@
 #include "Jugadores.h"
 #include "Partidos.h"
 #include "Personas.h"
+#include <stdlib.h>
+#include <time.h>
 
 int Menu();
 
@@ -15,6 +17,7 @@ int main(int argc, char const *argv[]) {
     int opcion = 0;
     vector<Equipos*> listaEquipos;
     vector<Jugadores*> listaJugadores;
+    vector<Partidos*> torneo;
     opcion = Menu();
     if(opcion==1){
         for (int i = 1; i <= 4; i++) {
@@ -84,7 +87,11 @@ int main(int argc, char const *argv[]) {
         }//Fin del for PADRE
     }//Fin del if
     if(opcion==2){
-
+        int aleatorio = 0;
+        srand (time(NULL));
+        aleatorio = rand() % 2;
+        cout << aleatorio;
+        torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(1), 0, 0));
     }//Fin del if
     if (opcion == 3) {
 
