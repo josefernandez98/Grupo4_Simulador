@@ -16,7 +16,6 @@ Equipos::Equipos(){
   NivelOfensiva=0;
   GolesFavor=0;
   GolesContra=0;
-
 }
 
 Equipos::Equipos(string nombreEquipo, Entrenadores entrenador,
@@ -69,7 +68,7 @@ void Equipos::setListaJugadores(Jugadores jugador){
 string Equipos::toString(){
   stringstream ss;
   ss << "Nombre Equipo: " << nombreEquipo << endl;
-  ss << "Entrenador: " << entrenador << endl;
+  ss << "Entrenador: " << entrenador.toString() << endl;
   ss << "Nivel Defensa: " << NivelDefensa << endl;
   ss << "Nivel Ofensa: " << NivelOfensiva << endl;
   ss << "Goles Favor : " << GolesFavor << endl;
