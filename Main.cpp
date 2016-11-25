@@ -87,20 +87,74 @@ int main(int argc, char const *argv[]) {
         }//Fin del for PADRE
     }//Fin del if
     if(opcion==2){
-        int aleatorio = 0;
-        srand (time(NULL));
+
+        //Partido 1
+        Equipos* local;
+        int aleatorio = 1;
         aleatorio = rand() % 2;
-        cout << aleatorio;
-        torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(1), 0, 0));
+        if (aleatorio == 0) {
+            local = listaEquipos.at(0);
+        } else {
+            local = listaEquipos.at(1);
+        }//Fin del if
+        torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(1), 0, 0, local));
+
+        //Partido 2
+        aleatorio = rand() % 2;
+        if (aleatorio == 0) {
+            local = listaEquipos.at(0);
+        } else {
+            local = listaEquipos.at(2);
+        }//Fin del if
+        torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(2), 0, 0, local));
+
+        //Partido 3
+        aleatorio = rand() % 2;
+        if (aleatorio == 0) {
+            local = listaEquipos.at(0);
+        } else {
+            local = listaEquipos.at(3);
+        }//Fin del if
+        torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(3), 0, 0, local));
+
+        //Partido 4
+        aleatorio = rand() % 2;
+        if (aleatorio == 0) {
+            local = listaEquipos.at(1);
+        } else {
+            local = listaEquipos.at(2);
+        }//Fin del if
+        torneo.push_back(new Partidos(listaEquipos.at(1), listaEquipos.at(2), 0, 0, local));
+
+        //Partido 5
+        aleatorio = rand() % 2;
+        if (aleatorio == 0) {
+            local = listaEquipos.at(1);
+        } else {
+            local = listaEquipos.at(3);
+        }//Fin del if
+        torneo.push_back(new Partidos(listaEquipos.at(1), listaEquipos.at(3), 0, 0, local));
+
+        //Partido 6
+        aleatorio = rand() % 2;
+        if (aleatorio == 0) {
+            local = listaEquipos.at(2);
+        } else {
+            local = listaEquipos.at(3);
+        }//Fin del if
+        torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(1), 0, 0, local));
+
+        for (int i = 0; i < 7; i++) {
+            if (torneo.at(i)->getEquipo1() == torneo.getLocal()) {
+                torneo.at(i)->getEquipo2()->setNivelDefensa() = torneo.at(i)->getEquipo2()->getNivelDefensa() * 0.9
+            }
+        }//Fin del for
     }//Fin del if
     if (opcion == 3) {
 
     }//Fin del if
     if (opcion == 4) {
-
-    }//Fin del if
-    if(opcion == 5){
-      cout << "Adios" << endl;
+        cout << "Hasta luego." << endl;
     }//Fin del if
     return 0;
 }//Fin del main
@@ -110,13 +164,12 @@ int Menu () {
     cout << "---------- Torneo de Futbol ----------" << endl;
     cout << "1. Crear Equipos." << endl;
     cout << "2. Simulacion del torneo." << endl;
-    cout << "3. Listar Equipos." << endl;
-    cout << "4. Pasar a archivo de texto." << endl;
-    cout << "5. Salir del torneo." << endl;
+    cout << "3. Pasar a archivo de texto." << endl;
+    cout << "4. Salir del torneo." << endl;
     cout << "Ingrese su opcion:";
     cin >> opcion;
-    if ((opcion > 5) || (opcion <= 0)){
-        for (;(opcion > 5) || (opcion <= 0);) {
+    if ((opcion > 4) || (opcion <= 0)){
+        for (;(opcion > 4) || (opcion <= 0);) {
             cout << "Lo sentimos, ha ingresado una opcion invalida." << endl;
             cout << "Ingrese su opcion:" << endl;
             cin >> opcion;
