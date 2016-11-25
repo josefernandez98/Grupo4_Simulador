@@ -15,29 +15,29 @@ Partidos::Partidos(){
   local;
 
 }
-Partidos::Partidos(Equipos equipo1, Equipos equipo2,
-  int MarcadorEquipo1, int MarcadorEquipo2, Equipos ganador, Equipos local){
+Partidos::Partidos(Equipos* equipo1, Equipos* equipo2,
+  int MarcadorEquipo1, int MarcadorEquipo2, Equipos* local){
     this->equipo1=equipo1;
     this->equipo2=equipo2;
     this->MarcadorEquipo1=MarcadorEquipo1;
     this->MarcadorEquipo2=MarcadorEquipo2;
-    this->ganador=ganador;
+    //this->ganador=ganador;
     this->local=local;
 }
 
-Equipos Partidos::getEquipo1(){
+Equipos* Partidos::getEquipo1(){
   return equipo1;
 }
 
-Equipos Partidos::getEquipo2(){
+Equipos* Partidos::getEquipo2(){
   return equipo2;
 }
 
-Equipos Partidos::getGanador(){
+Equipos* Partidos::getGanador(){
   return ganador;
 }
 
-Equipos Partidos::getLocal(){
+Equipos* Partidos::getLocal(){
   return local;
 }
 
@@ -51,19 +51,19 @@ int Partidos::getMarcadorEquipo2(){
 
 //seters
 
-void Partidos::setEquipo1(Equipos equipo1){
+void Partidos::setEquipo1(Equipos* equipo1){
   this->equipo1=equipo1;
 }
 
-void Partidos::setEquipo2(Equipos equipo2){
+void Partidos::setEquipo2(Equipos* equipo2){
   this->equipo2=equipo2;
 }
 
-void Partidos::setGanador(Equipos ganador){
+void Partidos::setGanador(Equipos* ganador){
   this->ganador=ganador;
 }
 
-void Partidos::setLocal(Equipos local){
+void Partidos::setLocal(Equipos* local){
   this->local=local;
 }
 
@@ -77,11 +77,11 @@ void Partidos::setMarcadorEquipo2(int MarcadorEquipo2){
 
 string Partidos::toString(){
   stringstream ss;
-  ss << "Equipo 1: "<< equipo1.toString()<<"\n";
-  ss << "Equipo 2: "<< equipo2.toString()<<"\n";
+  ss << "Equipo 1: "<< equipo1->toString()<<"\n";
+  ss << "Equipo 2: "<< equipo2->toString()<<"\n";
   ss << "Marcador Equipo 1: "<< MarcadorEquipo1<<"\n";
   ss << "Marcador Equipo 2: "<< MarcadorEquipo2<<"\n";
-  ss << "Ganador : "<< ganador.toString() <<"\n";
-  ss << "Local: "<< local.toString() <<"\n";
+  ss << "Ganador : "<< ganador->toString() <<"\n";
+  ss << "Local: "<< local->toString() <<"\n";
   return ss.str();
 }
