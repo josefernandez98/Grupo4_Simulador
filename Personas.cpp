@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -6,11 +5,11 @@
 
 using namespace std;
 
-Personas::Personas() {
-    nombre = "";
-    apellido = "";
-    sobrenombre = "";
-    nivel = 1;
+Personas::Personas(string nombre, string apellido, string sobrenombre, int nivel) {
+    this->nombre = nombre;
+    this->apellido = apellido;
+    this->sobrenombre = sobrenombre;
+    this->nivel = nivel;
 }//Fin del metodo
 
 Personas::Personas() {

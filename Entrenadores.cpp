@@ -6,8 +6,8 @@
 
 using namespace std;
 
-Entrenadores::Entrenadores() {
-    tactica = "";
+Entrenadores::Entrenadores(string tactica) {
+    this->tactica = tactica;
 }//Fin del metodo
 
 Entrenadores::Entrenadores () {

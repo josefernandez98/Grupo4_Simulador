@@ -4,8 +4,8 @@
 #include "Personas.h"
 #include "Entrenadores.h"
 
-Jugadores::Jugadores() {
-    posicion = "";
+Jugadores::Jugadores(string posicion) {
+    this->posicion = posicion;
 }//Fin del metodo
 
 Jugadores::Jugadores() {
