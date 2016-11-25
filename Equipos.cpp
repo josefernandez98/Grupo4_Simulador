@@ -7,6 +7,12 @@
 #include "Entrenadores.h"
 
 Equipos::Equipos(){
+  nombreEquipo="";
+  entrenador=NULL;
+  NivelDefensa=0;
+  NivelOfensiva=0;
+  GolesFavor=0;
+  GolesContra=0;
 
 }
 

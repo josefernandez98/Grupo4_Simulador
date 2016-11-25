@@ -10,7 +10,7 @@ class Partidos{
     Equipos equipo1;
     Equipos equipo2;
     int MarcadorEquipo1;
-    int Marcadorequipo2;
+    int MarcadorEquipo2;
     Equipos ganador;
     Equipos local;
 

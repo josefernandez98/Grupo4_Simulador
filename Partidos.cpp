@@ -6,14 +6,20 @@
 using namespace std;
 
 Partidos::Partidos(){
+  equipo1=NULL;
+  equipo2=NULL;
+  MarcadorEquipo1=0;
+  MarcadorEquipo2=0;
+  ganador=NULL;
+  local=NULL;
 
 }
 Partidos::Partidos(Equipos equipo1, Equipos equipo2,
-  int MarcadorEquipo1, int Marcadorequipo2, Equipos ganador, Equipos local){
+  int MarcadorEquipo1, int MarcadorEquipo2, Equipos ganador, Equipos local){
     this->equipo1=equipo1;
     this->equipo2=equipo2;
     this->MarcadorEquipo1=MarcadorEquipo1;
-    this->Marcadorequipo2=Marcadorequipo2;
+    this->Marcadorequipo2=MarcadorEquipo2;
     this->ganador=ganador;
     this->local=local;
 }
