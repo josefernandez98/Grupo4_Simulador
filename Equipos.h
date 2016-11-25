@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Persona.h"
+#include "Personas.h"
 #include "Entrenadores.h"
 #include "Jugadores.h"
 
