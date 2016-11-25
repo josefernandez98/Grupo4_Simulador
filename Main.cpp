@@ -106,7 +106,7 @@ int Menu () {
     cout << "3. Listar Equipos." << endl;
     cout << "4. Pasar a archivo de texto." << endl;
     cout << "5. Salir del torneo." << endl;
-    cout << "Ingrese su opcion:" << endl;
+    cout << "Ingrese su opcion:";
     cin >> opcion;
     if ((opcion > 5) || (opcion <= 0)){
         for (;(opcion > 5) || (opcion <= 0);) {
