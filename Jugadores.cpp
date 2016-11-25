@@ -3,6 +3,7 @@
 #include <sstream>
 #include "Personas.h"
 #include "Entrenadores.h"
+#include "Jugadores.h"
 
 Jugadores::Jugadores(string posicion) {
     this->posicion = posicion;
@@ -23,5 +24,5 @@ string Jugadores::getPosicion() {
 string Jugadores::toString() {
     stringstream ss;
     ss << Personas::toString() << " Posicion: " << posicion << endl;
-    return ss;
+    return ss.str();
 }//Fin del metodo

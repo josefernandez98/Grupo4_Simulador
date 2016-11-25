@@ -2,16 +2,17 @@
 #include <string>
 #include <sstream>
 #include "Equipos.h"
+#include "Partidos.h"
 
 using namespace std;
 
 Partidos::Partidos(){
-  equipo1=NULL;
-  equipo2=NULL;
+  equipo1;
+  equipo2;
   MarcadorEquipo1=0;
   MarcadorEquipo2=0;
-  ganador=NULL;
-  local=NULL;
+  ganador;
+  local;
 
 }
 Partidos::Partidos(Equipos equipo1, Equipos equipo2,
@@ -19,7 +20,7 @@ Partidos::Partidos(Equipos equipo1, Equipos equipo2,
     this->equipo1=equipo1;
     this->equipo2=equipo2;
     this->MarcadorEquipo1=MarcadorEquipo1;
-    this->Marcadorequipo2=MarcadorEquipo2;
+    this->MarcadorEquipo2=MarcadorEquipo2;
     this->ganador=ganador;
     this->local=local;
 }
@@ -40,11 +41,11 @@ Equipos Partidos::getLocal(){
   return local;
 }
 
-int getMarcadorEquipo1(){
+int Partidos::getMarcadorEquipo1(){
   return MarcadorEquipo1;
 }
 
-int getMarcadorEquipo2(){
+int Partidos::getMarcadorEquipo2(){
   return MarcadorEquipo2;
 }
 
@@ -66,21 +67,21 @@ void Partidos::setLocal(Equipos local){
   this->local=local;
 }
 
-void getMarcadorEquipo1(int MarcadorEquipo1){
+void Partidos::setMarcadorEquipo1(int MarcadorEquipo1){
   this->MarcadorEquipo1=MarcadorEquipo1;
 }
 
-void getMarcadorEquipo2(int MarcadorEquipo2){
+void Partidos::setMarcadorEquipo2(int MarcadorEquipo2){
   this->MarcadorEquipo2=MarcadorEquipo2;
 }
 
 string Partidos::toString(){
   stringstream ss;
-  ss << "Equipo 1: "<< equipo1<<"\n";
-  ss << "Equipo 2: "<< equipo2<<"\n";
+  ss << "Equipo 1: "<< equipo1.toString()<<"\n";
+  ss << "Equipo 2: "<< equipo2.toString()<<"\n";
   ss << "Marcador Equipo 1: "<< MarcadorEquipo1<<"\n";
   ss << "Marcador Equipo 2: "<< MarcadorEquipo2<<"\n";
-  ss << "Ganador : "<< ganador <<"\n";
-  ss << "Local: "<< local <<"\n";
+  ss << "Ganador : "<< ganador.toString() <<"\n";
+  ss << "Local: "<< local.toString() <<"\n";
   return ss.str();
 }

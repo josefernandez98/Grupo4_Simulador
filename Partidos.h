@@ -29,7 +29,7 @@ class Partidos{
     void setGanador(Equipos);
     void setLocal(Equipos);
     void setMarcadorEquipo1(int);
-    void getMarcadorEquipo2(int);
+    void setMarcadorEquipo2(int);
 
     string toString();
 
