@@ -11,15 +11,15 @@ using namespace std;
 class Equipos{
   private:
     string nombreEquipo;
-    Entrenadores entrenador;
-    vector<Jugadores> listaJugadores;
+    Entrenadores* entrenador;
+    vector<Jugadores*> listaJugadores;
     int NivelDefensa;
     int NivelOfensiva;
     int GolesFavor;
     int GolesContra;
   public:
     Equipos();
-    Equipos(string,Entrenadores, int, int);
+    Equipos(string,Entrenadores*, int, int);
     int getNivelDefensa();
     int getNivelOfensa();
     int getGolesFavor();
@@ -29,10 +29,10 @@ class Equipos{
     void setGolesFavor(int);
     void setGolesContra(int);
 
-    Entrenadores getEntrenador();
-    void setEntrenador(Entrenadores);
+    Entrenadores* getEntrenador();
+    void setEntrenador(Entrenadores*);
 
-    void setListaJugadores(Jugadores);
+    void setListaJugadores(Jugadores*);
 
     string toString();
 
