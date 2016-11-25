@@ -21,4 +21,5 @@ class Personas {
         string getApellido();
         string getSobrenombre();
         int getNivel();
+        string toString();
 };
