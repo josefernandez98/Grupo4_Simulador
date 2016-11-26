@@ -144,11 +144,69 @@ int main(int argc, char const *argv[]) {
         }//Fin del if
         torneo.push_back(new Partidos(listaEquipos.at(0), listaEquipos.at(1), 0, 0, local));
 
-        for (int i = 0; i < 7; i++) {
-            if (torneo.at(i)->getEquipo1() == torneo.getLocal()) {
-                torneo.at(i)->getEquipo2()->setNivelDefensa() = torneo.at(i)->getEquipo2()->getNivelDefensa() * 0.9
-            }
+        for (int i = 0; i < 6; i++) {
+            int defensaLocal = 0, defensaVisitante = 0, ofensivaLocal = 0, ofensivaVisitante = 0, equipoLocal = 0, equipoVisitante = 0;
+            if (torneo.at(i)->getEquipo1() == torneo.at(i)->getLocal()) {
+                defensaVisitante = torneo.at(i)->getEquipo2()->getNivelDefensa() * 0.9;
+                defensaLocal = torneo.at(i)->getEquipo1()->getNivelDefensa();
+                ofensivaLocal = torneo.at(i)->getEquipo1()->getNivelOfensa();
+                ofensivaVisitante = torneo.at(i)->getEquipo2()->getNivelOfensa();
+                equipoLocal = 1;
+            } else {
+                defensaVisitante = torneo.at(i)->getEquipo1()->getNivelDefensa() * 0.9;
+                defensaLocal = torneo.at(i)->getEquipo2()->getNivelDefensa();
+                ofensivaLocal = torneo.at(i)->getEquipo2()->getNivelOfensa();
+                ofensivaVisitante = torneo.at(i)->getEquipo1()->getNivelOfensa();
+                equipoLocal = 2;
+            }//Fin de esto
+            if (equipoLocal == 1) {
+                int goles = 0;
+                for (int j = 0; j < 5; j++) {
+                    aleatorio = rand() % 10 + 1;
+                    ofensivaVisitante *= aleatorio;
+                    if (ofensivaLocal > defensaVisitante) {
+                        goles++;
+                        torneo.at(i)->getEquipo1()->setGolesFavor(goles);
+                    }//Fin del if
+                }//Fin del primer equipo
+                for (int j = 0; j < 5; j++) {
+                    aleatorio = rand() % 10 + 1;
+                    ofensivaVisitante *= aleatorio;
+                    goles = 0;
+                    if (ofensivaVisitante > defensaLocal) {
+                        goles++;
+                        torneo.at(i)->getEquipo2()->setGolesFavor(goles);
+                    }//Fin del if
+                }//Fin del primer equipo
+            } else if (equipoLocal == 2){
+                int goles = 0;
+                for (int j = 0; j < 5; j++) {
+                    aleatorio = rand() % 10 + 1;
+                    ofensivaVisitante *= aleatorio;
+                    if (ofensivaLocal > defensaVisitante) {
+                        goles++;
+                        torneo.at(i)->getEquipo2()->setGolesFavor(goles);
+                    }//Fin del if
+                }//Fin del primer equipo
+                for (int j = 0; j < 5; j++) {
+                    aleatorio = rand() % 10 + 1;
+                    ofensivaVisitante *= aleatorio;
+                    goles = 0;
+                    if (ofensivaVisitante > defensaLocal) {
+                        goles++;
+                        torneo.at(i)->getEquipo1()->setGolesFavor(goles);
+                    }//Fin del if
+                }//Fin del primer equipo
+            }//FUCK
         }//Fin del for
+        int mayor1 = 0, mayor2 = 0, auxiliar = 0;
+        for (int i = 0; i < listaEquipos.size(); i++) {
+            auxiliar = listaEquipos.at(i)->getGolesFavor() - listaEquipos.at(i)->getGolesContra();
+            /*
+            Mirá Herbert, este lab estana muy largo, por ende, no pudimos hacer esta shit.
+            Atte. José y Harold.
+            */
+        }//Fin de esta mierda. Herbert lee esto, easter egg
     }//Fin del if
     if (opcion == 3) {
 
